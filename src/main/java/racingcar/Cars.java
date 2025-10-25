@@ -14,7 +14,7 @@ public class Cars {
                 .collect(Collectors.toList());
     }
 
-    //테스트 용
+    //테스트용 : 입력 문자열 대신 Car 객체 리스트를 직접 주입한다.
     public Cars(List<Car> cars) {
         this.cars = cars;
     }
