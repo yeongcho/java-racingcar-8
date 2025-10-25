@@ -4,9 +4,9 @@ public class RacingGame {
     private final Cars cars;
     private final int tryCount;
 
-    public RacingGame(Cars cars, String tryCount) {
+    public RacingGame(Cars cars, int tryCount) {
         this.cars = cars;
-        this.tryCount = Integer.parseInt(tryCount);
+        this.tryCount = tryCount;
     }
 
     public void run() {
