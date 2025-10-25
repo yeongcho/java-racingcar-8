@@ -1,6 +1,10 @@
 package racingcar;
 
+import camp.nextstep.edu.missionutils.Randoms;
+
 public class Car {
+    private static final int MOVE_CONDITION = 4;
+
     private final String name;
     private int position = 0;
 
@@ -11,6 +15,13 @@ public class Car {
         this.name = name.trim();
     }
 
+    public void tryMove() {
+        int randomValue = Randoms.pickNumberInRange(0, 9);
+        if (randomValue >= MOVE_CONDITION) {
+            position++;
+        }
+    }
+
     public String getName() {
         return name;
     }
@@ -19,7 +30,7 @@ public class Car {
         return position;
     }
 
-    public void move() {
-        position++;
+    public String getProgress() {
+        return "-".repeat(position);
     }
 }
