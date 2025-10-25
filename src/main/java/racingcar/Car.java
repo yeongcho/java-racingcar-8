@@ -33,4 +33,9 @@ public class Car {
     public String getProgress() {
         return "-".repeat(position);
     }
+
+    // 테스트용: 무조건 한 칸 전진
+    public void move() {
+        position++;
+    }
 }

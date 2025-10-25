@@ -14,6 +14,11 @@ public class Cars {
                 .collect(Collectors.toList());
     }
 
+    //테스트 용
+    public Cars(List<Car> cars) {
+        this.cars = cars;
+    }
+
     public List<Car> getCars() {
         return cars;
     }
