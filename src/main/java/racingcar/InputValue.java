@@ -12,4 +12,31 @@ public class InputValue {
         System.out.println("시도할 횟수는 몇 회인가요?");
         return Console.readLine();
     }
+
+    private static void validateCarNames(String input) {
+        if (input == null || input.trim().isEmpty()) {
+            throw new IllegalArgumentException("자동차 이름은 비어 있을 수 없습니다.");
+        }
+        for (String name : input.split(",")) {
+            String trimmed = name.trim();
+            if (trimmed.isEmpty()) {
+                throw new IllegalArgumentException("자동차 이름이 공백일 수 없습니다.");
+            }
+            if (trimmed.length() > 5) {
+                throw new IllegalArgumentException("자동차 이름은 5자 이하만 가능합니다.");
+            }
+        }
+    }
+
+    private static int validateTryCount(String input) {
+        try {
+            int count = Integer.parseInt(input);
+            if (count <= 0) {
+                throw new IllegalArgumentException("시도 횟수는 1 이상이어야 합니다.");
+            }
+            return count;
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("시도 횟수는 숫자여야 합니다.");
+        }
+    }
 }
